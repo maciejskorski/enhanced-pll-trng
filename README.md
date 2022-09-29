@@ -1,1 +1,3 @@
-# new_pll_trng
+# Summary
+
+The repo tracks experiments for the project "New PLL TRNG".
