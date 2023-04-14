@@ -15,16 +15,17 @@ The repo contains supplementary material (data and code) to reproduce experiment
 Data used in experiments are stored under the `data` directory; sub-directories correspond to FPGA card families (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion®). The experiments were executed on Google Colab and can be reproduced with [this notebook](src/TRNG_Dependency_Analysis.ipynb).
 ```
 ├───📁 data/
-│   ├───📁 CvVv12_4/
+│   ├───📁 CVv12_4/
 │   │   └───...
 │   ├───📁 S6v11_2/
+│   │   └───...
+│   ├───📁 S6v11_8/
 │   │   └───...
 │   ├───📁 SF2v11_11/
 │   │   └───...
 │   └───📄 data.zip
 ├───📁 src/
-│   ├───📄 TRNG_Dependency_Analysis.ipynb
-│   └───📄 demo.py
+│   └───📄 TRNG_Dependency_Analysis.ipynb
 └───📄 README.md
 ```
 
