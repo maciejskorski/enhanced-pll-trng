@@ -26,7 +26,8 @@ Data used in experiments are stored under the `data` directory; sub-directories 
 │   ├───📄 TRNG_Dependency_Analysis.ipynb
 │   └───📄 demo.py
 └───📄 README.md
-`
+```
+
 ## Links
 
 - For random number generator standards, see [AIS-31 NewDraft](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Certification/Interpretations/AIS_31_Functionality_classes_for_random_number_generators_e.pdf?__blob=publicationFile&v=5)
