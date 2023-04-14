@@ -3,17 +3,16 @@
 ![MLflow](https://img.shields.io/static/v1?style=for-the-badge&message=MLflow&color=0194E2&logo=MLflow&logoColor=FFFFFF&label=)
 
 
-# Summary
+# Enhancing Quality and Security of the PLL-TRNG
 
-The repo tracks experiments for the project "New PLL TRNG".
+## Summary
+
+The repo contains supplementary material (data and code) to reproduce experiments presented in the paper.
 
 
+## Data and Code
 
-# Data and Code
-
-Data used in experiments are stored under the `data` directory; sub-directories correspond to card families.
-The experiments were done in [this Colab Notebook](src/TRNG_Dependency_Analysis.ipynb).
-
+Data used in experiments are stored under the `data` directory; sub-directories correspond to FPGA card families (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion®). The experiments were executed on Google Colab and can be reproduced with [this notebook](src/TRNG_Dependency_Analysis.ipynb).
 ```
 ├───📁 data/
 │   ├───📁 CvVv12_4/
@@ -24,18 +23,11 @@ The experiments were done in [this Colab Notebook](src/TRNG_Dependency_Analysis.
 │   │   └───...
 │   └───📄 data.zip
 ├───📁 src/
+│   ├───📄 TRNG_Dependency_Analysis.ipynb
 │   └───📄 demo.py
-├───📄 .DS_Store
-├───📄 .gitattributes
-├───📄 README.md
-└───📄 TRNG_Dependency_Analysis.ipynb
-```
+└───📄 README.md
+`
+## Links
 
-
-
-# Analysis
-
-# Links
-
-- [AIS_31_NewDraft](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Certification/Interpretations/AIS_31_Functionality_classes_for_random_number_generators_e.pdf?__blob=publicationFile&v=5)
-- [KS08](https://iacr.org/archive/ches2008/51540144/51540144.pdf)
+- For random number generator standards, see [AIS-31 NewDraft](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Certification/Interpretations/AIS_31_Functionality_classes_for_random_number_generators_e.pdf?__blob=publicationFile&v=5)
+- For more about stochastic models for PLL-based designs, see ["Modern Random Number Generator Design - Case Study on a Secured PLL-based TRNG"](https://www.degruyter.com/document/doi/10.1515/itit-2018-0025/html?lang=en)
