@@ -12,7 +12,12 @@ The repo contains supplementary material (data and code) to reproduce experiment
 
 ## Data and Code
 
-Data used in experiments are stored under the `data` directory. Sub-directories at the first level correspond to FPGA card families (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested); sub-directories at the second level correspond to configurations described in the paper (A, B, or C), with one or two PLL outputs as indicated by the suffix (e.g. A_1 vs A_2). The experiments were executed on Google Colab and can be reproduced with [this notebook](src/TRNG_Dependency_Analysis.ipynb).  
+Data used in experiments are stored under the `data` directory. Sub-directories at the first level correspond to FPGA card families (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested); sub-directories at the second level correspond to configurations described in the paper (A, B, or C), with one or two PLL outputs as indicated by the suffix (e.g. A_1 vs A_2). 
+
+The code can be found under the `src` directory:
+* The experiments were executed on Google Colab and can be reproduced with the notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) 
+* [src/find_PLL-TRNG_configs_FPGA_2023.py](src/find_PLL-TRNG_configs_FPGA_2023.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. Lines 405-433 contain the constraints of the state-space to explore.
+* [src/Corner_values_test_results.xlsx](src/Corner_values_test_results.xlsx) contains test results for corner values in temperature and supply voltage
 ```
 ├───📁 data/
 │   ├───📁 CVv12_4/
