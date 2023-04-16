@@ -16,12 +16,6 @@ def round_up_to_odd(n):
 
 
 @lru_cache(maxsize=None)
-
-# NB 03/2023 : nouveau calcul des distances qui ne prend plus uniquement la valeur min mais l'ensemble des contributeurs
-# on ne fait plus la recherche sur une plage autour du front (tolérance sur le dc) mais pour une valeur arbitraire de dc
-# le nb de points par fronts est calculé en fonction du jitter
-
-
 def distances(jit, KM, KD):
     # pts per edge = 3.3*KD*sig/T1)
     # for a 2/1000 jitter # = 3.3*KD*2/1000 par front
