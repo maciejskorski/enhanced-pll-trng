@@ -7,7 +7,7 @@
 
 ## Summary
 
-The repo contains supplementary material (data and code) to reproduce experiments presented in the paper.
+The repo contains supplementary material (data and code) to reproduce experiments presented in the paper "Enhancing Quality and Security of the PLL-TRNG".
 
 
 ## Data and Code
