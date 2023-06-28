@@ -17,7 +17,7 @@ Data used in experiments are stored under the `data` directory. Sub-directories 
 The code can be found under the `src` directory:
 * The experiments were executed on Google Colab and can be reproduced with the notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) 
 * [src/find_PLL-TRNG_configs_FPGA_2023.py](src/find_PLL-TRNG_configs_FPGA_2023.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs_FPGA_2023.py#L523-L549) contains the constraints of the state-space to explore.
-* [src/Corner_values_test_results.xlsx](src/Corner_values_test_results.xlsx) contains test results for corner values in temperature and supply voltage
+* [data/corner/corner_values.xlsx](data/corner/corner_values.xlsx) contains test results for corner values in temperature and supply voltage, and
 ```
 ├───📁 data/
 │   ├───📁 CVv12_4/
@@ -76,6 +76,7 @@ The code can be found under the `src` directory:
 ├───📁 src/
 │   ├───📄 Corner_values_test_results.xlsx
 │   ├───📄 TRNG_Dependency_Analysis.ipynb
+│   ├───📄 CornerValues.ipynb
 │   └───📄 find_PLL-TRNG_configs_FPGA_2023.py
 └────📄 README.md
 ```
