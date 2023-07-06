@@ -22,7 +22,7 @@ This repository contains supplementary material (data and code) to reproduce the
 
 <p align="center">
   <img src="images/pll_trng_orig.svg" alt="my alt text"/>
-  <em>PLL TRNG Architecture</em>
+  <figcaption style="text-align:center">PLL TRNG Architecture</figcaption>
 </p>
 
 
