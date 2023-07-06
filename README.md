@@ -8,8 +8,17 @@
 
 ## Summary
 
-This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG (TCHES 2023)".
+This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG" (published at TCHES 2023).
 
+## Authors
+
+<p align="center">
+    <a href="mailto:nathalie.bochard@univ-st-etienne.fr"><strong>Nathalie Bochard</strong></a>
+    <a href="mailto:florent.bernard@univ-st-etienne.fr"><strong>Florent Bernard</strong></a>
+    <a href="mailto:quentin.dallison@thalesgroup.com"><strong>Quentin Dallison</strong></a>
+    <a href="mailto:fischer@univ-st-etienne.fr"><strong>Viktor Fisher</strong></a>
+    <a href="https://skorski.lu"><strong>Maciej Skórski</strong></a>
+</p>
 
 ## Data and Code
 
