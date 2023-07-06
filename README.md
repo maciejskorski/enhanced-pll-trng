@@ -8,7 +8,9 @@
 
 ## Summary
 
-This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
+This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023).
+
+[embed]images/pll_trng_orig.pdf[/embed]
 
 ## Authors
 
