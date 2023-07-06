@@ -8,7 +8,7 @@
 
 ## Summary
 
-The repo contains supplementary material (data and code) to reproduce experiments presented in the paper "Enhancing Quality and Security of the PLL-TRNG".
+This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG (TCHES 2023)".
 
 
 ## Data and Code
