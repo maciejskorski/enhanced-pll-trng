@@ -6,15 +6,6 @@
 
 # Enhancing Quality and Security of the PLL-TRNG
 
-## Summary
-
-This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
-
-<figure align="center">
-  <img src="images/pll_trng_orig.svg" alt="my alt text"/>
-  <figcaption>PLL TRNG Architecture</figcaption>
-</figure>
-
 ## Authors
 
 <p align="center">
@@ -24,6 +15,17 @@ This repository contains supplementary material (data and code) to reproduce the
     <a href="mailto:fischer@univ-st-etienne.fr"><strong>Viktor Fisher</strong></a>
     <a href="https://skorski.lu"><strong>Maciej Skórski</strong></a>
 </p>
+
+## Summary
+
+This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
+
+<figure align="center">
+  <img src="images/pll_trng_orig.svg" alt="my alt text"/>
+  <figcaption>PLL TRNG Architecture</figcaption>
+</figure>
+
+
 
 ## Data and Code
 
