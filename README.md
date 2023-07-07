@@ -29,6 +29,9 @@ This repository contains supplementary material (data and code) to reproduce the
 
 ## Data and Code
 
+<details>
+  <summary>Show more</summary>
+  
 Data used in experiments are stored under the `data` directory. Sub-directories at the first level correspond to FPGA card families (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested); sub-directories at the second level correspond to configurations described in the paper (A, B, or C), with one or two PLL outputs as indicated by the suffix (e.g. A_1 vs A_2). 
 
 The code can be found under the `src` directory:
@@ -97,6 +100,13 @@ The code can be found under the `src` directory:
 │   └───📄 find_PLL-TRNG_configs_FPGA_2023.py
 └────📄 README.md
 ```
+
+</details>
+
+## Results
+
+### Temperature Attack
+![Temperature Attack](data/TemperatureAttack/pll_trng_temperature_attack.gif)
 
 ## Links
 
