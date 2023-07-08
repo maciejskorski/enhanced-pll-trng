@@ -163,9 +163,10 @@ The code can be found under the `src` directory:
 
 </details>
 
-## Results
+## Results Overview
 
 ### Temperature Attack
+
 ![Temperature Attack](data/TemperatureAttack/pll_trng_temperature_attack.gif)
 
 ## Links
