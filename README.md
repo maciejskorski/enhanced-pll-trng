@@ -107,9 +107,13 @@ the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two
 The code can be found under the `src` directory:
 * The experiments were executed on Google Colab and can be reproduced with the notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) 
 * [src/find_PLL-TRNG_configs_FPGA_2023.py](src/find_PLL-TRNG_configs_FPGA_2023.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs_FPGA_2023.py#L523-L549) contains the constraints of the state-space to explore.
-* [data/corner/corner_values.xlsx](data/corner/corner_values.xlsx) contains test results for corner values in temperature and supply voltage, that are [analysed in this notebook](src/CornerValues.ipynb).
+* [data/corner/corner_values.xlsx](data/corner/corner_values.xlsx) contains test results for corner values in temperature and supply voltage, that are [analysed in this notebook](src/CornerValues.ipynb). The data directory structure is summarized below:
 ```
-├───📁 data/
+├───📁 CornerAnalysis/
+│   └───📄 corner_values.xlsx
+├───📁 ExtremeTemperature/
+│   └───📄 S6_C_freezing attack_km476_kd495_dff.bin
+├───📁 Regular/
 │   ├───📁 CVv12_4/
 │   │   ├───📁 A_1/
 │   │   │   └───...
@@ -147,28 +151,24 @@ The code can be found under the `src` directory:
 │   │   │   └───...
 │   │   ├───📁 C_1/
 │   │   │   └───...
-│   │   └-──📁 C_2/
-│   │       └───...
-│   ├───📁 SF2v11_11/
-│   │   ├───📁 A_1/
+│   │   ├───📁 C_2/
 │   │   │   └───...
-│   │   ├───📁 A_2/
-│   │   │   └───...
-│   │   ├───📁 B_1/
-│   │   │   └───...
-│   │   ├───📁 B_2/
-│   │   │   └───...
-│   │   ├───📁 C_1/
-│   │   │   └───...
-│   │   └───📁 C_2/
-│   │       └───...
-│   └───📄 data.zip
-├───📁 src/
-│   ├───📄 Corner_values_test_results.xlsx
-│   ├───📄 TRNG_Dependency_Analysis.ipynb
-│   ├───📄 CornerValues.ipynb
-│   └───📄 find_PLL-TRNG_configs_FPGA_2023.py
-└────📄 README.md
+│   │   └───📄 .DS_Store
+│   └───📁 SF2v11_11/
+│       ├───📁 A_1/
+│       │   └───...
+│       ├───📁 A_2/
+│       │   └───...
+│       ├───📁 B_1/
+│       │   └───...
+│       ├───📁 B_2/
+│       │   └───...
+│       ├───📁 C_1/
+│       │   └───...
+│       └───📁 C_2/
+│           └───...
+└───📁 TemperatureAttack/
+    └───📄 S6_C_freezing attack_km476_kd495_dff.bin
 ```
 </details>
 
