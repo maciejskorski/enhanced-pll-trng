@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+
+# Universite Jean Monnet
+# Laboratoire Hubert Curien
+# Saint-Etienne
+# France
+
+# Brice Colombier, Nathalie Bochard
+
+# PLL-based TRNG:
+#   a tool to help you find configurations
+#   according to defined constraints.
+
 from functools import lru_cache
 from math import sqrt, floor, ceil, gcd
 from time import process_time
@@ -10,18 +22,19 @@ from sympy import mod_inverse
 
 
 def round_up_to_odd(n):
+    #######################
     if n & 1 == 0:
         return n + 1
     return n
 
 
-@lru_cache(maxsize=None)
 def distances(jit, KM, KD):
+    ###########################
+    """Compute theoretical distances between contributors"""
+    """ According to KM / KD coef, and jitter per period """
     # pts per edge = 3.3*KD*sig/T1)
-    # for a 2/1000 jitter # = 3.3*KD*2/1000 par front
     NP = int(3.3 * KD * jit)
-
-    # index of rising edges and falling edges
+    # index of rising and falling edges
     Ri = np.arange(1, NP + 1)
     Fi = np.arange(int(KD / 2), int(KD / 2) + NP + 1)
     # vector of contributors indexes
@@ -30,16 +43,20 @@ def distances(jit, KM, KD):
     kinvKM = (K * mod_inverse(KM, KD)) % KD
     kinvKM.sort()
     # distances between contributors
+    kinvKM = np.append(kinvKM, kinvKM[0] + KD)
     d = kinvKM[1:] - kinvKM[:-1]
-    # return d.mean()
     return d
 
 
 def rs_product(m_product, n_c_product):
+    #######################################
+    """RxS product for fref = 125 MHz"""
     return 0.015625 * m_product / n_c_product
 
 
 def get_physical_contraints(family):
+    ####################################
+    """set physical constraints according to datasheet"""
     physical_constraints = {
         "Xilinx_S6": {
             "fpfd_min": 19,
@@ -132,23 +149,6 @@ def get_physical_contraints(family):
             "pvcomin": 1,
             "pvcomax": 2,
         },
-        ##        "Microsemi_SF2":
-        ##        {
-        ##            "fpfd_min": 1,
-        ##            "fpfd_max": 200,
-        ##            "fpll0_min": 20,
-        ##            "fpll0_max": 400,
-        ##            "fpll1_min": 20,
-        ##            "fpll1_max": 400,
-        ##            "fvco_min": 500,
-        ##            "fvco_max": 1000,
-        ##            "nmin": 1,
-        ##            "nmax": 256,
-        ##            "mmin": 1,
-        ##            "mmax": 16384,
-        ##            "cmin": 1,
-        ##            "cmax": 32
-        ##        }
         "Microsemi_SF2": {
             "fpfd_min": 1,
             "fpfd_max": 200,
@@ -161,17 +161,16 @@ def get_physical_contraints(family):
             "nmin": 1,
             "nmax": 256,
             "mmin": 1,
-            "mmax": 1024,
+            "mmax": 16384,
             "cmin": 1,
-            "cmax": 128,
-            "pvcomin": 1,
-            "pvcomax": 4,
+            "cmax": 32,
         },
     }
     return physical_constraints[family].values()
 
 
 def add_variables(problem, family, nb_PLLS, fixed_m0=0, fixed_n0=0, fixed_c0=0, fixed_pvco0=0):
+    ###############################################################################################
     # Get PLL Physical constraints
     (
         fpfd_min,
@@ -229,6 +228,7 @@ def add_variables(problem, family, nb_PLLS, fixed_m0=0, fixed_n0=0, fixed_c0=0, 
 
 
 def add_physical_constraints(problem, family, nb_PLLs):
+    #######################################################
     # Get PLL Physical constraints
     (
         fpfd_min,
@@ -277,6 +277,7 @@ def add_physical_constraints(problem, family, nb_PLLs):
 
 
 def add_TRNG_setting_constraints(problem, constraints, family, nb_PLLs, s_m, s_d):
+    ##################################################################################
     # Get PLL Physical constraints
     (
         fpfd_min,
@@ -325,6 +326,7 @@ def add_application_requirements(
     f_min_pll0=0,
     f_max_pll0=float("inf"),
 ):
+    #######################################################################################################################################################################################
     # Get PLL Physical constraints
     (
         fpfd_min,
@@ -388,6 +390,8 @@ def add_application_requirements(
 
 
 def extend_solutions(solutions, fref):
+    ######################################
+    """recovers solution parameters"""
     for solution in solutions:
         solution["Km"] = solution["m1"] * solution["n0"] * solution["c0"]
         solution["Kd"] = solution["m0"] * solution["n1"] * solution["c1"]
@@ -407,12 +411,17 @@ def extend_solutions(solutions, fref):
         solution["#sup30"] = sum(d > 30)
         solution["#sup40"] = sum(d > 40)
         solution["#sup50"] = sum(d > 50)
-        solution["dmean"] = d.mean()
+        if len(d) > 0:
+            solution["dmean"] = d.mean()
+        else:
+            solution["dmean"] = 0
         solution["d"] = d
     return solutions
 
 
 def prune_repeated(solutions, nb_reps, feature):
+    ################################################
+    """removes solutions with identical parameters"""
     different_values = {}
     pruned_solutions = []
     try:
@@ -429,62 +438,8 @@ def prune_repeated(solutions, nb_reps, feature):
         return solutions
 
 
-def pretty_print_solutions(solutions, nb_PLLs):
-    if nb_PLLs == 2:
-        for index, solution in enumerate(solutions):
-            if index % 30 == 0:
-                if index == 0:
-                    print(
-                        "┌───┬───┬───┬─────┬───┬───┬───┬─────┬────┬────┬───────┬───────┬──────────┬──────────┬──────────┬──────────┬───────┬───────┬─────┐"
-                    )
-                else:
-                    print(
-                        "├───┼───┼───┼─────┼───┼───┼───┼─────┼────┼────┼───────┼───────┼──────────┼──────────┼──────────┼──────────┼───────┼───────┼─────┤"
-                    )
-                print(
-                    "│m0 │n0 │c0 │pvco0│m1 │n1 │c1 │pvco1│Km  │Kd  │f0[MHz]│f1[MHz]│fPFD0[MHz]│fPFD1[MHz]│fVCO0[MHz]│fVCO1[MHz]│R[Mb/s]│S[ps-1]│d_min│"
-                )
-                print(
-                    "├───┼───┼───┼─────┼───┼───┼───┼─────┼────┼────┼───────┼───────┼──────────┼──────────┼──────────┼──────────┼───────┼───────┼─────┤"
-                )
-            print(
-                "│{m0:<3}│{n0:<3}│{c0:<3}│{pvco0:<5}│{m1:<3}│{n1:<3}│{c1:<3}│{pvco1:<5}│{Km:<4}"
-                "│{Kd:<4}│{f0:<7}│{f1:<7}│{fpfd0:<10}│{fpfd1:<10}│{fvco0:<10}│{fvco1:<10}│{R:<7}│{S:<7}│{d:<5}│".format(
-                    **solution
-                )
-            )
-        print(
-            "└───┴───┴───┴─────┴───┴───┴───┴─────┴────┴────┴───────┴───────┴──────────┴──────────┴──────────┴──────────┴───────┴───────┴─────┘"
-        )
-    elif nb_PLLs == 1:
-        for index, solution in enumerate(solutions):
-            if index % 30 == 0:
-                if index == 0:
-                    print(
-                        "┌───┬───┬───┬─────┬────┬────┬───────┬───────┬──────────┬──────────┬──────────┬──────────┬───────┬───────┬─────┐"
-                    )
-                else:
-                    print(
-                        "├───┼───┼───┼─────┼────┼────┼───────┼───────┼──────────┼──────────┼──────────┼──────────┼───────┼───────┼─────┤"
-                    )
-                print(
-                    "│m1 │n1 │c1 │pvco1│Km  │Kd  │f0[MHz]│f1[MHz]│fPFD0[MHz]│fPFD1[MHz]│fVCO0[MHz]│fVCO1[MHz]│R[Mb/s]│S[ps-1]│d_min│"
-                )
-                print(
-                    "├───┼───┼───┼─────┼────┼────┼───────┼───────┼──────────┼──────────┼──────────┼──────────┼───────┼───────┼─────┤"
-                )
-            print(
-                "│{m1:<3}│{n1:<3}│{c1:<3}│{pvco1:<5}│{Km:<4}"
-                "│{Kd:<4}│{f0:<7}│{f1:<7}│{fpfd0:<10}│{fpfd1:<10}│{fvco0:<10}│{fvco1:<10}│{R:<7}│{S:<7}│{d:<5}│".format(
-                    **solution
-                )
-            )
-        print(
-            "└───┴───┴───┴─────┴────┴────┴───────┴───────┴──────────┴──────────┴──────────┴──────────┴───────┴───────┴─────┘"
-        )
-
-
 def save_solutions_to_csv(solutions, csv_filename, fref, nb_PLLs):
+    ##################################################################
     if nb_PLLs == 2:
         with open(csv_filename, "w") as csv_file:
             csv_file.write(
@@ -509,27 +464,24 @@ def save_solutions_to_csv(solutions, csv_filename, fref, nb_PLLs):
                 )
 
 
-def convert_csv_to_Excel(csv_filename):
-    with open(csv_filename, "r") as csv_file:
-        with open(csv_filename.replace(".csv", "_for_Excel.csv"), "w") as Excel_file:
-            for ligne in csv_file:
-                # Excel_file.write(ligne.replace(",", ";").replace(".", ","))
-                Excel_file.write(ligne.replace(",", ";"))
-
+## #########################################
+## main
+## #########################################
 
 if __name__ == "__main__":
     # Mandatory parameters
+    # --------------------
 
     # FPGA family
     family = "Intel_CV"  # "Intel_CV" or "Xilinx_S6" or "Microsemi_SF2" or "Intel_C10" or "Xilinx_KUS", Xilinx_S7
     # Reference frequency of the PLLs
     fref = 125
     # Maximum frequency of the design
-    f_max_design = 250
+    f_max_design = 155
     # Throughput range
     r_min, r_max = 0.28, float("inf")
     # Sensitivity range
-    s_min, s_max = 0.03, float("inf")
+    s_min, s_max = 0.07, float("inf")
     # Min distance between points in the reconstructed waveform
     d_min, d_max = 1, float("inf")
     # Km and Kd max values
@@ -540,6 +492,7 @@ if __name__ == "__main__":
     jit = 2.5 / 1000
 
     # Optional parameters
+    # -------------------
 
     # Throughput sensitivity product
     rs_min, rs_max = 0, float("inf")
@@ -553,13 +506,18 @@ if __name__ == "__main__":
     print("Starting configurations search")
     problem = Problem(BacktrackingSolver())
 
-    ##    # No constraints on PLL0
-    ##    problem = add_variables(problem, family, nb_PLLs)
-    ##    problem, constraints = add_physical_constraints(problem, family, nb_PLLs)
-    ##    problem, constraints = add_TRNG_setting_constraints(problem, constraints, family, nb_PLLs, s_m, s_d)
-    ##    problem = add_application_requirements(problem, constraints, family, nb_PLLs, f_max_design, s_min, s_max, r_min, r_max, d_min, d_max, rs_min, rs_max)
+    # choose one of the three following constraint scenarios
+    # ------------------------------------------------------
+
+    # No constraints on PLL0
+    # ----------------------
+    # problem = add_variables(problem, family, nb_PLLs)
+    # problem, constraints = add_physical_constraints(problem, family, nb_PLLs)
+    # problem, constraints = add_TRNG_setting_constraints(problem, constraints, family, nb_PLLs, s_m, s_d)
+    # problem = add_application_requirements(problem, constraints, family, nb_PLLs, f_max_design, s_min, s_max, r_min, r_max, d_min, d_max, rs_min, rs_max)
 
     # Constraints on PLL0 fmin and fmax
+    # ---------------------------------
     problem = add_variables(problem, family, nb_PLLs)
     problem, constraints = add_physical_constraints(problem, family, nb_PLLs)
     problem, constraints = add_TRNG_setting_constraints(problem, constraints, family, nb_PLLs, s_m, s_d)
@@ -582,11 +540,13 @@ if __name__ == "__main__":
     )
 
     # Constraints on PLL0 coefficients
+    # --------------------------------
     # problem = add_variables(problem, family, nb_PLLs, fixed_m0, fixed_n0, fixed_c0)
     # problem, constraints = add_physical_constraints(problem, family, nb_PLLs)
     # problem, constraints = add_TRNG_setting_constraints(problem, constraints, family, nb_PLLs, s_m, s_d)
     # problem = add_application_requirements(problem, constraints, family, nb_PLLs, f_max_design, s_min, s_max, r_min, r_max, d_min, d_max, rs_min, rs_max)
 
+    # find solutions
     solutions = problem.getSolutions()
 
     outfilename = family + "_solutions.csv"
@@ -594,12 +554,13 @@ if __name__ == "__main__":
     if solutions:
         init_nb_solutions = len(solutions)
         solutions = extend_solutions(solutions, fref)
-        # solutions = prune_repeated(solutions, 1, "d")
-        # pretty_print_solutions(solutions, nb_PLLs)
-        save_solutions_to_csv(solutions, outfilename, fref, nb_PLLs)
-        convert_csv_to_Excel(outfilename)
         print(family)
         print("{} solutions found in {}s".format(init_nb_solutions, round(process_time() - t0, 3)))
+        # filter solutions according to a characteristic (eliminates duplicates)
+        # solutions = prune_repeated(solutions, 1, "dmean")
+        # pruned_nb_solutions = len(solutions)
+        # print("{} solutions found after pruning".format(pruned_nb_solutions))
+        save_solutions_to_csv(solutions, outfilename, fref, nb_PLLs)
     else:
         print(family)
         print("No solution found in {}s".format(round(process_time() - t0, 3)))

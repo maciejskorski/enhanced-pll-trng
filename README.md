@@ -178,15 +178,19 @@ The code can be found under the `src` directory:
 
 ## :bar_chart: Results Overview
 
+### Theoretical Model Properties
+
+[This R notebook]() shows how to 
+
 ### Statistical Analysis under Regular Conditions
 
 TBD
 
-### Analysis under Corner Values
+### :thermometer: Analysis under Corner Values
 
 TBD
 
-### Temperature Attack
+### :snowflake: Temperature Attack
 
 ![Temperature Attack](images/pll_trng_temperature_attack.gif)
 
