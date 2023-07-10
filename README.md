@@ -7,7 +7,7 @@
 
 # Enhancing Quality and Security of the PLL-TRNG
 
-## Authors
+## :star: Authors
 
 <p align="center">
     <a href="mailto:nathalie.bochard@univ-st-etienne.fr"><strong>Nathalie Bochard</strong></a>
@@ -17,7 +17,7 @@
     <a href="https://skorski.lu"><strong>Maciej Skórski</strong></a>
 </p>
 
-## About
+## :memo: About
 
 This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in :open_book: "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
 
@@ -26,14 +26,16 @@ This repository contains supplementary material (data and code) to reproduce the
 <figcaption style="text-align:center">Figure: PLL TRNG Architecture</figcaption>
 </figure>
 
-## Data
+## :file_folder: Data
+
+The zipped data are [available from releases](https://github.com/maciejskorski/enhanced-pll-trng/releases).
 
 <details>
-  <summary>Show more</summary>
+  <summary>Read about data structure</summary>
   
 Data used in experiments are stored under the `data` directory. Sub-directories at the first level group experiments logically according to the environmental conditions (corner values, regular conditions, extreme temperature). Further sub-directories group acquired data by
 the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested), and by configurations described in the paper (A, B, or C with one or two PLL outputs as indicated by the suffix, e.g. A_1 vs A_2). Finally, the data files have extension 
-`.dff` and  the associated metadata files have extension `.log`.
+`.dff` and the associated metadata files have extension `.log`.
 
 ```
 ├───📁 CornerAnalysis/
@@ -174,7 +176,7 @@ The code can be found under the `src` directory:
 
 
 
-## Results Overview
+## :bar_chart: Results Overview
 
 ### Statistical Analysis under Regular Conditions
 
