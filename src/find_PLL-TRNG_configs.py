@@ -1,3 +1,5 @@
+__author__ = "Brice Colombier, Nathalie Bochard"
+
 # -*- coding: utf-8 -*-
 
 # Universite Jean Monnet

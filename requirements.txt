@@ -2,3 +2,5 @@ pandas
 seaborn
 mlflow
 statsmodels
+python-constraint
+sympy
