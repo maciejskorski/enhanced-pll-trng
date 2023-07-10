@@ -11,7 +11,7 @@ jobs:
     - name: zip data
       run: zip -r data.zip data
     - name: upload data
-    - uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: data
         path: data.zip
