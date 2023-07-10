@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_USER: $GITHUB_REPOSITORY_OWNER
-      IMAGE_NAME: "${GITHUB_REPOSITORY,,}"
+      IMAGE_NAME: $GITHUB_REPOSITORY
       IMAGE_VERSION: v1.0
     steps:
     - uses: actions/checkout@v3
