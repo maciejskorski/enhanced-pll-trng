@@ -103,6 +103,15 @@ the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two
 
 ## Code
 
+The code can be run in many ways: [with Docker image](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
+
+### Run Docker Image
+
+```console
+docker run -it --rm -p 8888:8888 -v "${PWD}":/home/jovyan/work ghcr.io/maciejskorski/enhanced-pll-trng:v1.0
+```
+
+
 <details>
   <summary>Show more</summary>
 
