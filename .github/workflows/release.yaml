@@ -1,0 +1,17 @@
+name: deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: zip data
+      run: zip -r data.zip data
+    - name: upload data
+      uses: actions/upload-artifact@v3
+      with:
+        name: data
+        path: data.zip
