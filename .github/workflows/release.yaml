@@ -2,6 +2,9 @@ name: deployment
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - v*
 
 jobs:
   release:
