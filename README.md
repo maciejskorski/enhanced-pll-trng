@@ -184,7 +184,7 @@ The code can be found under the `src` directory:
 
 ### 🔎 Theoretical Model Properties
 
-[This R notebook](src/PLL_TRNG_Model.ipynb) shows how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
+[This R notebook](src/PLL_TRNG_Model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
 
 ### Statistical Analysis under Regular Conditions
 
