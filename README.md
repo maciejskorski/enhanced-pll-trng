@@ -35,6 +35,7 @@ Data used in experiments are stored under the `data` directory. Sub-directories 
 the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested), and by configurations described in the paper (A, B, or C with one or two PLL outputs as indicated by the suffix, e.g. A_1 vs A_2). Finally, the data files have extension 
 `dff` and  the associated metadata files have extension `.log`.
 
+```
 ├───📁 CornerAnalysis/
 │   └───📄 corner_values.xlsx
 ├───📁 ExtremeTemperature/
@@ -94,6 +95,7 @@ the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two
 │       └───📁 C_2/
 │           └───...
 └───📄 data.zip
+```
 
 </details>
 
