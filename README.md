@@ -180,7 +180,7 @@ The code can be found under the `src` directory:
 
 ### 🏁 Basic Properties
 
-[This notebook](src/Basics.ipynb) shows how to process and visualize data samples.
+[This notebook](src/Basics.ipynb) shows how to process and visualize data samples. This notebook reproduces Figures 10 and 11 from the paper.
 
 ### Theoretical Model Properties
 
