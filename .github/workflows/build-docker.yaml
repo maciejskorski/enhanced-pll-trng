@@ -7,17 +7,17 @@ on:
 
 jobs:
   push_to_registry:
-    name: push Docker image to GitHub Container Registry
+    name: build and publish Docker image
     runs-on: ubuntu-latest
     env:
-      GITHUB_USER: $GITHUB_REPOSITORY_OWNER
-      IMAGE_NAME: "${GITHUB_REPOSITORY,,}"
+      GITHUB_USER: ${{ github.repository_owner }}
+      IMAGE_NAME: ${{ github.repository }}
       IMAGE_VERSION: v1.0
     steps:
     - uses: actions/checkout@v3
     - name: Build Docker Image
       run: |
-        docker build . -t $IMAGE_NAME:$IMAGE_VERSION ghcr.io/$IMAGE_NAME:$IMAGE_VERSION
+        docker build . -t ghcr.io/$IMAGE_NAME:$IMAGE_VERSION
     - name: Publish to GitHub Container registry
       run: |
         docker login ghcr.io -u $GITHUB_USER -p ${{ secrets.GITHUB_TOKEN }}
