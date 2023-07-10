@@ -105,11 +105,12 @@ the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two
 
 The code can be run in many ways: [with Docker image](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
 
-### Run Docker Image
+### Run with Docker Image
 
 ```console
 docker run -it --rm -p 8888:8888 -v "${PWD}":/home/jovyan/work ghcr.io/maciejskorski/enhanced-pll-trng:v1.0
 ```
+Follow the instructions in the terminal to access Jupyter. It will be available under `http://127.0.0.1:8888/lab?token=<one-time-string>`.
 
 
 <details>
