@@ -1,0 +1,14 @@
+Nval: 8000
+Mean: 252.89
+Median: 253.0
+Var: 12.34
+aVar: 12.24
+v from Pval: 3.02
+Km = 441
+Kd = 475
+min dist = 7
+max dist = 262
+Nb of jittered pts = 19
+Every distances: 
+[  7   7   7   7   7   7   7  14 262  14  14   7   7   7   7   7  14  14
+  59]
