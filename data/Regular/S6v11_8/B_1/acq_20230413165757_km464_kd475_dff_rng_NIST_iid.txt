@@ -1,0 +1,145 @@
+Read in file D:\_USERS\nath\projets\2023\2212_HectorVB6_PLLdff_only_project\Acquisition_pll_trng_dff_only_vB6\data\230413\S6v11_8\b1\acq_20230413165757_km464_kd475_dff_rng_nist_1bit.bin, 1000000 bytes long.
+Dataset: 1000000 1-bit symbols.
+Output symbol values: min = 0, max = 1
+
+
+Compression Test:      
+	Scores                   Ranks
+	15615                     35 
+	15631                     71 
+	15606                     12 
+	15643                     90 
+	15616                     35 
+	15643                     92 
+	15625                     64 
+	15637                     88 
+	15637                     85 
+	15615                     39 
+	                         --- 
+	                           0
+Passed Compression Test
+
+Over/under Test:       
+	Scores                   Ranks
+	16  49755                 51    12 
+	17  50300                 51    99*
+	17  49845                 51    12 
+	17  49893                 51    31 
+	15  50375                 26   100*
+	16  49774                 47    13 
+	17  50108                 51    81 
+	17  50151                 51    89 
+	17  49808                 51    11 
+	17  50264                 51    99*
+	                         ---   --- 
+	                           0     3
+Passed Over/under Test
+
+Excursion Test:        
+	Scores                   Ranks
+	112.703                   32 
+	110.235                   29 
+	137.3                     58 
+	198.222                   86 
+	99.3899                   18 
+	103.967                   25 
+	163.842                   78 
+	96.655                    15 
+	95.5136                   18 
+	175.42                    82 
+	                         --- 
+	                           0
+Passed Excursion Test
+
+Directional runs Test: 
+	Scores                   Ranks
+	7398     8  5088          95*   28    96*
+	7349     9  5034          69    51    40 
+	7213     9  5036           1*   51    44 
+	7338     8  5034          65    28    52 
+	7381     9  5035          92    51    51 
+	7340     9  5094          68    51    97*
+	7321    10  5047          51    67    54 
+	7346     9  5032          72    51    38 
+	7310     9  4984          43    51     2*
+	7321     9  5043          39    51    47 
+	                         ---   ---   --- 
+	                           2     0     3
+Passed Directional runs Test
+
+Covariance Test:       
+	Scores                   Ranks
+	0.00122729                90 
+	-0.00150894                2*
+	0.000776997               90 
+	0.000537379               71 
+	-0.00187433                2*
+	0.00112879                89 
+	-0.000539696              21 
+	-0.000760153              13 
+	0.000956556               91 
+	-0.00131757                3*
+	                         --- 
+	                           3
+Passed Covariance Test
+
+Collision Test:        
+	Scores                   Ranks
+	1  19.6056  49            51    44     6 
+	1  19.551  57             51    44    52 
+	1  19.8564  60            51    61    75 
+	2  19.7048  67            86    48    95*
+	1  21.1489  55            51   100*   45 
+	1  19.2727  67            51    24    96*
+	1  19.9983  63            51    79    91 
+	1  20.2538  58            51    81    60 
+	1  20.3836  57            51    97*   54 
+	1  20.0541  63            51    80    93 
+	                         ---   ---   --- 
+	                           0     2     2
+Passed Collision Test
+
+** Passed iid shuffle tests
+
+
+Chi square independence
+	score = 2000.73, degrees of freedom = 2047, cut-off = 2250.43
+** Passed chi-square independence test
+
+Chi square stability
+	score = 5.80611, degrees of freedom = 9 cut-off = 27.877
+** Passed chi-square stability test
+
+IID = True
+min-entropy = 0.994718
+
+Compression sanity check...
+	dataset 1 compressed length = 124920, cutoff = 99471.8...Pass
+
+	dataset 2 compressed length = 125048, cutoff = 99471.8...Pass
+
+	dataset 3 compressed length = 124848, cutoff = 99471.8...Pass
+
+	dataset 4 compressed length = 125144, cutoff = 99471.8...Pass
+
+	dataset 5 compressed length = 124928, cutoff = 99471.8...Pass
+
+	dataset 6 compressed length = 125144, cutoff = 99471.8...Pass
+
+	dataset 7 compressed length = 125000, cutoff = 99471.8...Pass
+
+	dataset 8 compressed length = 125096, cutoff = 99471.8...Pass
+
+	dataset 9 compressed length = 125096, cutoff = 99471.8...Pass
+
+	dataset 10 compressed length = 124920, cutoff = 99471.8...Pass
+
+
+Collision sanity check...
+	Dividing dataset into 29-tuples
+	Check rule 1 - do three or more 29-tuples have the same value?...Pass
+	Check rule 2 - probability of number of collisions below cutoff
+		number of collisions = 3, cutoff = 1.23139...Pass
+
+sanity check = PASS
+time: (91.289 sec)
