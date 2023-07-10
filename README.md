@@ -176,9 +176,18 @@ The code can be found under the `src` directory:
 
 ## Results Overview
 
+### Statistical Analysis under Regular Conditions
+
+TBD
+
+### Analysis under Corner Values
+
+TBD
+
 ### Temperature Attack
 
-![Temperature Attack](data/TemperatureAttack/pll_trng_temperature_attack.gif)
+![Temperature Attack](images/pll_trng_temperature_attack.gif)
+
 
 ## Links
 
