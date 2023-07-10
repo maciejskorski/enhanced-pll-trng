@@ -180,11 +180,11 @@ The code can be found under the `src` directory:
 
 ### 🏁 Basic Properties
 
-[This notebook](src/Basics.ipynb) shows how to process and visualize data samples. This notebook reproduces Figures 10 and 11 from the paper.
+[This notebook](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
 
-### Theoretical Model Properties
+### 🔎 Theoretical Model Properties
 
-[This R notebook]() shows how to 
+[This R notebook](src/PLL_TRNG_Model.ipynb) shows how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
 
 ### Statistical Analysis under Regular Conditions
 
