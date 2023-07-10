@@ -28,7 +28,7 @@ This repository contains supplementary material (data and code) to reproduce the
 
 ## :file_folder: Data
 
-The zipped data is [available from releases](https://github.com/maciejskorski/enhanced-pll-trng/releases).
+The zipped data are [available from releases](https://github.com/maciejskorski/enhanced-pll-trng/releases).
 
 <details>
   <summary>Read about data structure</summary>
