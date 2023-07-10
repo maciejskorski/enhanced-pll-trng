@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: zip data
+    - name: prepare data
       run: zip -r data.zip data
     - name: upload data
       uses: actions/upload-artifact@v3
