@@ -178,6 +178,10 @@ The code can be found under the `src` directory:
 
 ## :bar_chart: Results Overview
 
+### 🏁 Basic Properties
+
+[This notebook](src/Basics.ipynb) shows how to process and visualize data samples.
+
 ### Theoretical Model Properties
 
 [This R notebook]() shows how to 
@@ -186,11 +190,11 @@ The code can be found under the `src` directory:
 
 TBD
 
-### :thermometer: Analysis under Corner Values
+### 🌡️ Analysis under Corner Values
 
 TBD
 
-### :snowflake: Temperature Attack
+### ❄️ Temperature Attack
 
 ![Temperature Attack](images/pll_trng_temperature_attack.gif)
 
