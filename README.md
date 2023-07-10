@@ -17,7 +17,7 @@
     <a href="https://skorski.lu"><strong>Maciej Skórski</strong></a>
 </p>
 
-## Summary
+## About
 
 This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
 
@@ -31,7 +31,8 @@ This repository contains supplementary material (data and code) to reproduce the
 <details>
   <summary>Show more</summary>
   
-Data used in experiments are stored under the `data` directory. Sub-directories at the first level correspond to FPGA card families (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested); sub-directories at the second level correspond to configurations described in the paper (A, B, or C), with one or two PLL outputs as indicated by the suffix (e.g. A_1 vs A_2). 
+Data used in experiments are stored under the `data` directory. Sub-directories at the first level group experiments logically according to the environmental conditions (corner values, regular conditions, extreme temperature). Further sub-directories group acquired data depending on 
+the FPGA card families (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested), and configurations described in the paper (A, B, or C with one or two PLL outputs as indicated by the suffix, e.g. A_1 vs A_2). 
 
 ├───📁 CVv12_4/
 │   ├───📁 A_1/
@@ -89,11 +90,12 @@ Data used in experiments are stored under the `data` directory. Sub-directories 
 │   └───📁 C_2/
 │       └───...
 └───📁 TemperatureAttack/
-
-
-
+</details>
 
 ## Code
+
+<details>
+  <summary>Show more</summary>
 
 The code can be found under the `src` directory:
 * The experiments were executed on Google Colab and can be reproduced with the notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) 
@@ -161,8 +163,9 @@ The code can be found under the `src` directory:
 │   └───📄 find_PLL-TRNG_configs_FPGA_2023.py
 └────📄 README.md
 ```
-
 </details>
+
+
 
 ## Results Overview
 
