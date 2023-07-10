@@ -33,7 +33,7 @@ This repository contains supplementary material (data and code) to reproduce the
   
 Data used in experiments are stored under the `data` directory. Sub-directories at the first level group experiments logically according to the environmental conditions (corner values, regular conditions, extreme temperature). Further sub-directories group acquired data by
 the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two Spartan devices were tested), and by configurations described in the paper (A, B, or C with one or two PLL outputs as indicated by the suffix, e.g. A_1 vs A_2). Finally, the data files have extension 
-`dff` and  the associated metadata files have extension `.log`.
+`.dff` and  the associated metadata files have extension `.log`.
 
 ```
 ├───📁 CornerAnalysis/
