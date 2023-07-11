@@ -114,7 +114,7 @@ docker run -it --rm -p 8888:8888 ghcr.io/maciejskorski/enhanced-pll-trng:latest
 and follow instructions to access the repository via Jupyter. 
 <details>
   <summary>See a snahpshot </summary>
-The Jupyter server will be available through a webbrowser under `http://127.0.0.1:8888/lab?token=<one-time-string>`.
+The Jupyter server will be available through a webbrowser under `http://127.0.0.1:8888/lab?token=one-time-string`.
 
 ![Jupyter Start](images/jupyter_start.png)
 </details>
