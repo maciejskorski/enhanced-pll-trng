@@ -109,7 +109,7 @@ The code can be run in many ways: [with Docker image](https://jupyter-docker-sta
 
 On a machine with Docker (local computer, virtual machine on cloud) run this image
 ```console
-docker run -it --rm -p 8888:8888 ghcr.io/maciejskorski/enhanced-pll-trng:latest
+docker run -it --rm -p 8888:8888 -v "$PWD":/home/jovyan/work ghcr.io/maciejskorski/enhanced-pll-trng:latest bash
 ```
 and follow instructions to access the repository via Jupyter. 
 <details>

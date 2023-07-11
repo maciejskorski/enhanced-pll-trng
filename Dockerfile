@@ -9,6 +9,6 @@ FROM jupyter/datascience-notebook:2023-06-01
 RUN pip install --no-cache-dir mlflow
 
 # copy repository data
-COPY . ${HOME}/work
+#COPY . ${HOME}/work
 
 
