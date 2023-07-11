@@ -8,7 +8,9 @@ FROM jupyter/datascience-notebook:2023-06-01
 # install extra dependencies
 RUN pip install --no-cache-dir mlflow
 
-# copy repository data
+# copy repository data and pass access rights 
 COPY . ${HOME}/work
-
+USER root
+RUN chown -R ${NB_UID} ${HOME}
+USER ${NB_USER}
 
