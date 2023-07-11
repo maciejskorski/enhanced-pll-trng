@@ -115,6 +115,7 @@ and follow instructions to access the repository via Jupyter.
 <details>
   <summary>See a snahpshot </summary>
 The Jupyter server will be available through a webbrowser under `http://127.0.0.1:8888/lab?token=<one-time-string>`.
+
 ![Jupyter Start](images/jupyter_start.png)
 </details>
 
