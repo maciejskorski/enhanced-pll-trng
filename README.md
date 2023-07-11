@@ -5,7 +5,7 @@
 [![MLflow](https://img.shields.io/static/v1?message=MLflow&color=0194E2&logo=MLflow&logoColor=FFFFFF&label=)](https://mlflow.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Google Colab](https://img.shields.io/static/v1?message=Google+Colab&color=222222&logo=Google+Colab&logoColor=F9AB00&label=)](https://colab.research.google.com/)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maciejskorski/enhanced-pll-trng/main)
+<a id="binder_link">[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maciejskorski/enhanced-pll-trng/main)</a>
 
 # Enhancing Quality and Security of the PLL-TRNG
 
@@ -111,7 +111,7 @@ For convinience, [the image](Dockerfile) provides the user with both software an
 
 ### Run Online with Docker
 
-For a single-click online access use  <a href="#">the Binder link at the top</a>.
+For a single-click online access use  <a href="#binder_link">the Binder link at the top</a>.
 
 ### Run Locally with Docker
 
