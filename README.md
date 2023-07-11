@@ -103,8 +103,9 @@ the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two
 
 ## Code
 
-The code runs interactively under the customized [Docker Image of Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
-For convenience, the image provides the user with both data-science software for Python and R and the data.
+The code is available in form of Python and R notebooks under the `src` directory. 
+The notebooks run interactively under the customized [Docker Image of Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
+For convinience, [the image](Dockerfile) provides the user with both software and data.
 
 ### Run Online with Docker
 
