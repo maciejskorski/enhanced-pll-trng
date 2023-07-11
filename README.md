@@ -121,7 +121,7 @@ The Jupyter server will be available through a webbrowser, under http://127.0.0.
 
 ### Run with Docker Image in Cloud 
 
-Use the binder link.
+Use the <a href="#">binder link at the top</a>
 
 <details>
   <summary>Show more</summary>
