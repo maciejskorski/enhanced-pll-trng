@@ -103,9 +103,14 @@ the FPGA card family (CV- Cyclone®V, S6 - Spartan™6, SF - SmartFusion2®, two
 
 ## Code
 
-The code can be run in many ways: [with Docker image](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
+The code runs interactively under the customized [Docker Image of Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
+For convenience, the image provides the user with both data-science software for Python and R and the data.
 
-### Run with Docker Image Locally
+### Run Online with Docker
+
+For a single-click online access use  <a href="#">the Binder link at the top</a>.
+
+### Run Locally with Docker
 
 On a machine with Docker (local computer, virtual machine on cloud) run this image
 ```console
@@ -119,12 +124,9 @@ The Jupyter server will be available through a webbrowser, under http://127.0.0.
 ![Jupyter Start](images/jupyter_start.png)
 </details>
 
-### Run with Docker Image in Cloud 
-
-Use the <a href="#">binder link at the top</a>
 
 <details>
-  <summary>Show more</summary>
+  <summary>Show more about code</summary>
 
 The code can be found under the `src` directory:
 * The experiments were executed on Google Colab and can be reproduced with the notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) 
