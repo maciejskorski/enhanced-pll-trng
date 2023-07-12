@@ -133,6 +133,7 @@ The Jupyter server will be available through a web browser, under http://127.0.0
 </details>
 
 
+
 ## :bar_chart: Scripts Overview
 
 The code can be found under the `src` directory, as Python scripts and Python or R notebooks.
@@ -141,26 +142,27 @@ The code can be found under the `src` directory, as Python scripts and Python or
 
 [find_PLL-TRNG_configs.py](src/find_PLL-TRNG_configs.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs_FPGA_2023.py#L523-L549) contains the constraints of the state-space to explore. First developed by <a href="mailto:brice.colombier@univ-st-etienne.fr">Brice Colombier</a>, the authors modified this script to compute the time distances between contributing bits.
 
-### 🏁 Basic Properties
+### 🏁 Data Basics
 
-The notebook [src/Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
+The notebook [Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
 
 ### 💻 Theoretical Model Properties
 
-The R notebook [src/PLL_TRNG_Model.ipynb](src/PLL_TRNG_Model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
+The R notebook [PLL_TRNG_Model.ipynb](src/PLL_TRNG_Model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
 
 ### 🔬 Statistical Analysis under Regular Conditions
 
-The notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) contains the experiments detailed in Section 6 of the paper to confirm the model assumptions. It reproduces Table 4, as well as Figures 12 and 13.
+The notebook [TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) runs the statistical analysis of the acquired data, reproducing Table 4, Figure 12 and Figure 13 from the paper.
 
 ### 🌡️🔌 Analysis under Corner Values
 
-The notebook [src/CornerValues.ipynb](src/CornerValues.ipynb) runs the analysis on the corner values in temperature and voltage, found in [data/corner/corner_values.xlsx](data/corner/corner_values.xlsx). It reproduces Figure 9 from the paper.
+The notebook [Corner_Values.ipynb](src/Corner_Values.ipynb) analyzes the data aquired under corner values of temperature and voltage.
 
 ### ❄️ Temperature Attack
 
-![Temperature Attack](images/pll_trng_temperature_attack.gif)
+TBD
 
+![Temperature Attack](images/pll_trng_temperature_attack.gif)
 
 ## Links
 
