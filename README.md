@@ -137,7 +137,7 @@ The Jupyter server will be available through a web browser, under http://127.0.0
   <summary>Show more about code</summary>
 
 The code can be found under the `src` directory:
-* [src/find_PLL-TRNG_configs_FPGA_2023.py](src/find_PLL-TRNG_configs_FPGA_2023.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs_FPGA_2023.py#L523-L549) contains the constraints of the state-space to explore;
+* [src/find_PLL-TRNG_configs_FPGA_2023.py](src/find_PLL-TRNG_configs_FPGA_2023.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. 
 * The experiments were executed on Google Colab and can be reproduced with the notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb);
 * The notebook [src/CornerValues.ipynb](src/CornerValues.ipynb) runs the analysis on the corner values in temperature and voltage, found in [data/corner/corner_values.xlsx](data/corner/corner_values.xlsx).
 </details>
@@ -148,11 +148,11 @@ The code can be found under the `src` directory:
 
 ### 🌐 Scanning PLL Configuration 
 
-The Python script [find_PLL-TRNG_configs.py](src/find_PLL-TRNG_configs.py), by Brice Colombier and Nathalie Bochard, generates the list of all possible configurations, along with the list of time distances between contributing bits.
+The Python script [find_PLL-TRNG_configs.py](src/find_PLL-TRNG_configs.py), by Brice Colombier and Nathalie Bochard, generates the list of all possible PLL configurations, along with the list of time distances between contributing bits.
 
 ### 🏁 Data Basics
 
-The Python notebook [Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
+The notebook [Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
 
 ### 🔎 Dealing with Theoretical Model
 
@@ -160,13 +160,16 @@ The R notebook [PLL_TRNG_Model.ipynb](src/PLL_TRNG_Model.ipynb) explains in deta
 
 ### 🔬 Statistical Analysis under Regular Conditions
 
-TBD
+The notebook [TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) runs the statistical analysis of the acquired data, reproducing Table 4, Figure 12 and Figure 13 from the paper.
+
 
 ### 🌡️ Analysis under Corner Values
 
-TBD
+The notebook [Corner_Values.ipynb](src/Corner_Values.ipynb) analyzes the data aquired under corner values of temperature and voltage.
 
 ### ❄️ Temperature Attack
+
+TBD
 
 ![Temperature Attack](images/pll_trng_temperature_attack.gif)
 
