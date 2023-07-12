@@ -12,10 +12,10 @@
 ## :star: Authors
 
 <p align="center">
-    <a href="https://skorski.lu"><strong>Maciej Skórski</strong></a>
-    <a href="mailto:quentin.dallison@thalesgroup.com"><strong>Quentin Dallison</strong></a>
-    <a href="mailto:nathalie.bochard@univ-st-etienne.fr"><strong>Nathalie Bochard</strong></a>
-    <a href="mailto:florent.bernard@univ-st-etienne.fr"><strong>Florent Bernard</strong></a>
+    <a href="https://skorski.lu"><strong>Maciej Skórski</strong></a>,
+    <a href="mailto:quentin.dallison@thalesgroup.com"><strong>Quentin Dallison</strong></a>,
+    <a href="mailto:nathalie.bochard@univ-st-etienne.fr"><strong>Nathalie Bochard</strong></a>,
+    <a href="mailto:florent.bernard@univ-st-etienne.fr"><strong>Florent Bernard</strong></a>,
     <a href="mailto:fischer@univ-st-etienne.fr"><strong>Viktor Fisher</strong></a>
 </p>
 
@@ -24,7 +24,7 @@
 This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in :open_book: "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
 
 <figure>
-<img src="images/pll_trng_new.pdf" style="display:block; margin:auto"/>
+<img src="images/pll_trng_new.jpg" style="display:block; margin:auto"/>
 <figcaption style="text-align:center">Figure: PLL-TRNG Architecture</figcaption>
 </figure>
 
@@ -108,7 +108,7 @@ For each experiment, the data file contains the bitstream available at the sampl
 
 </details>
 
-## Code
+## 🖥 Code execution
 
 The code is available in form of Python and R notebooks under the `src` directory. 
 The notebooks run interactively under the customized [Docker Image of Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
@@ -125,42 +125,37 @@ On a machine with Docker (local computer, virtual machine on cloud) run this ima
 docker run -it --rm -p 8888:8888 ghcr.io/maciejskorski/enhanced-pll-trng:latest
 ```
 and follow instructions to access the repository via Jupyter. 
+
 <details>
   <summary>See a snapshot </summary>
 The Jupyter server will be available through a web browser, under http://127.0.0.1:8888/lab?token=...
-
 ![Jupyter Start](images/jupyter_start.png)
 </details>
 
 
-<details>
-  <summary>Show more about code</summary>
+## :bar_chart: Scripts Overview
 
-The code can be found under the `src` directory:
-* [src/find_PLL-TRNG_configs_FPGA_2023.py](src/find_PLL-TRNG_configs_FPGA_2023.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs_FPGA_2023.py#L523-L549) contains the constraints of the state-space to explore;
-* The experiments were executed on Google Colab and can be reproduced with the notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb);
-* The notebook [src/CornerValues.ipynb](src/CornerValues.ipynb) runs the analysis on the corner values in temperature and voltage, found in [data/corner/corner_values.xlsx](data/corner/corner_values.xlsx).
-</details>
+The code can be found under the `src` directory, as Python scripts and Python or R notebooks.
 
+### ⚙ Generating configurations
 
-
-## :bar_chart: Results Overview
+[src/find_PLL-TRNG_configs_FPGA_2023.py](src/find_PLL-TRNG_configs_FPGA_2023.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs_FPGA_2023.py#L523-L549) contains the constraints of the state-space to explore. First developed by <a href="mailto:brice.colombier@univ-st-etienne.fr">Brice Colombier</a>, the authors modified this script to compute the time distances between contributing bits.
 
 ### 🏁 Basic Properties
 
 The notebook [src/Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
 
-### 🔎 Theoretical Model Properties
+### 💻 Theoretical Model Properties
 
 The R notebook [src/PLL_TRNG_Model.ipynb](src/PLL_TRNG_Model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
 
 ### 🔬 Statistical Analysis under Regular Conditions
 
-TBD
+The notebook [src/TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) contains the experiments detailed in Section 6 of the paper to confirm the model assumptions. It reproduces Table 4, as well as Figures 12 and 13.
 
-### 🌡️ Analysis under Corner Values
+### 🌡️🔌 Analysis under Corner Values
 
-TBD
+The notebook [src/CornerValues.ipynb](src/CornerValues.ipynb) runs the analysis on the corner values in temperature and voltage, found in [data/corner/corner_values.xlsx](data/corner/corner_values.xlsx). It reproduces Figure 9 from the paper.
 
 ### ❄️ Temperature Attack
 
