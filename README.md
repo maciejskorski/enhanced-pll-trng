@@ -144,15 +144,19 @@ The code can be found under the `src` directory:
 
 
 
-## :bar_chart: Results Overview
+## 📊 Workflow Overview
 
-### 🏁 Basic Properties
+### 🌐 Scanning PLL Configuration 
 
-The notebook [src/Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
+The Python script [find_PLL-TRNG_configs.py](src/find_PLL-TRNG_configs.py), by Brice Colombier and Nathalie Bochard, generates the list of all possible configurations, along with the list of time distances between contributing bits.
 
-### 🔎 Theoretical Model Properties
+### 🏁 Data Basics
 
-The R notebook [src/PLL_TRNG_Model.ipynb](src/PLL_TRNG_Model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
+The Python notebook [Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
+
+### 🔎 Dealing with Theoretical Model
+
+The R notebook [PLL_TRNG_Model.ipynb](src/PLL_TRNG_Model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
 
 ### 🔬 Statistical Analysis under Regular Conditions
 

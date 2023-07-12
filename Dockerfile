@@ -6,7 +6,7 @@
 FROM jupyter/datascience-notebook:2023-06-01
 
 # install extra dependencies
-RUN pip install --no-cache-dir mlflow
+RUN pip install --no-cache-dir mlflow pyngrok
 
 # copy repository data and pass access rights 
 COPY . ${HOME}/work
