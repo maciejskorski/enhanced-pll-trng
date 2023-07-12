@@ -140,7 +140,7 @@ The code can be found under the `src` directory, as Python scripts and Python or
 
 ### ⚙ Generating configurations
 
-[find_PLL-TRNG_configs.py](src/find_PLL-TRNG_configs.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs_FPGA_2023.py#L523-L549) contains the constraints of the state-space to explore. First developed by <a href="mailto:brice.colombier@univ-st-etienne.fr">Brice Colombier</a>, the authors modified this script to compute the time distances between contributing bits.
+[find_PLL-TRNG_configs.py](src/find_PLL-TRNG_configs.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs.py#L474-L494) contains the constraints of the state-space to explore. First developed by <a href="mailto:brice.colombier@univ-st-etienne.fr">Brice Colombier</a>, the authors modified this script to compute the time distances between contributing bits.
 
 ### 🏁 Data Basics
 
