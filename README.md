@@ -1,11 +1,11 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python](https://img.shields.io/static/v1?message=Python&color=3776AB&logo=Python&logoColor=FFFFFF&label=)](https://www.python.org/)
 [![R](https://img.shields.io/badge/R-276DC3?&logo=r&logoColor=white)](https://www.r-project.org/)
-[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Docker](https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white)](https://www.docker.com/)
 [![MLflow](https://img.shields.io/static/v1?message=MLflow&color=0194E2&logo=MLflow&logoColor=FFFFFF&label=)](https://mlflow.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Google Colab](https://img.shields.io/static/v1?message=Google+Colab&color=222222&logo=Google+Colab&logoColor=F9AB00&label=)](https://colab.research.google.com/)
-<a id="binder_link">[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maciejskorski/enhanced-pll-trng/v0.0.1)</a>
+<a id="binder_link">[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maciejskorski/enhanced-pll-trng/v0.0.3)</a>
 
 # Enhancing Quality and Security of the PLL-TRNG
 
@@ -116,7 +116,9 @@ For convenience, [the image](Dockerfile) provides the user with both software an
 
 ### Run Online with Docker
 
+<!-- markdown-link-check-disable -->
 For a single-click online access use  <a href="#binder_link">the Binder link at the top</a>.
+<!-- markdown-link-check-enable -->
 
 ### Run Locally with Docker
 
