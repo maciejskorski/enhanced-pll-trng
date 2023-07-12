@@ -475,7 +475,7 @@ if __name__ == "__main__":
     # --------------------
 
     # FPGA family
-    family = "Intel_CV"  # "Intel_CV" or "Xilinx_S6" or "Microsemi_SF2" or "Intel_C10" or "Xilinx_KUS", Xilinx_S7
+    family = "Intel_CV"  # "Intel_CV" or "Xilinx_S6" or "Xilinx_S7" or "Microsemi_SF2" or "Intel_C10" or "Xilinx_KUS"
     # Reference frequency of the PLLs
     fref = 125
     # Maximum frequency of the design
