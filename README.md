@@ -1,11 +1,11 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python](https://img.shields.io/static/v1?message=Python&color=3776AB&logo=Python&logoColor=FFFFFF&label=)](https://www.python.org/)
 [![R](https://img.shields.io/badge/R-276DC3?&logo=r&logoColor=white)](https://www.r-project.org/)
-[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Docker](https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white)](https://www.docker.com/)
 [![MLflow](https://img.shields.io/static/v1?message=MLflow&color=0194E2&logo=MLflow&logoColor=FFFFFF&label=)](https://mlflow.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Google Colab](https://img.shields.io/static/v1?message=Google+Colab&color=222222&logo=Google+Colab&logoColor=F9AB00&label=)](https://colab.research.google.com/)
-<a id="binder_link">[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maciejskorski/enhanced-pll-trng/v0.0.1)</a>
+<a id="binder_link">[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maciejskorski/enhanced-pll-trng/v0.0.3)</a>
 
 # Enhancing Quality and Security of the PLL-TRNG
 
@@ -116,7 +116,9 @@ For convenience, [the image](Dockerfile) provides the user with both software an
 
 ### Run Online with Docker
 
+<!-- markdown-link-check-disable -->
 For a single-click online access use  <a href="#binder_link">the Binder link at the top</a>.
+<!-- markdown-link-check-enable -->
 
 ### Run Locally with Docker
 
@@ -140,23 +142,23 @@ The code can be found under the `src` directory, as Python scripts and Python or
 
 ### ⚙ Generating configurations
 
-[find_PLL-TRNG_configs.py](src/find_PLL-TRNG_configs.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_PLL-TRNG_configs.py#L474-L494) contains the constraints of the state-space to explore. First developed by <a href="mailto:brice.colombier@univ-st-etienne.fr">Brice Colombier</a>, the authors modified this script to compute the time distances between contributing bits.
+[find_PLL-TRNG_configs.py](src/find_pll_trng_configs.py) is the Python script that generates the list of all possible configurations, along with the list of time distances between contributing bits. [The main code block](https://github.com/maciejskorski/new_pll_trng/blob/main/src/find_pll_trng_configs.py#L474-L494) contains the constraints of the state-space to explore. First developed by <a href="mailto:brice.colombier@univ-st-etienne.fr">Brice Colombier</a>, the authors modified this script to compute the time distances between contributing bits.
 
 ### 🏁 Data Basics
 
-The notebook [Basics.ipynb](src/Basics.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
+The notebook [raw_data_processing.ipynb](src/raw_data_processing.ipynb) shows how to process and visualize data samples. It reproduces Figures 10 and 11 from the paper.
 
 ### 💻 Theoretical Model Properties
 
-The R notebook [PLL_TRNG_Model.ipynb](src/PLL_TRNG_Model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
+The R notebook [stochastic_model.ipynb](src/stochastic_model.ipynb) explains in detail how to use the theoretical model. It reproduces Figures 4, 5, 6 and 7 from the paper.
 
 ### 🔬 Statistical Analysis under Regular Conditions
 
-The notebook [TRNG_Dependency_Analysis.ipynb](src/TRNG_Dependency_Analysis.ipynb) runs the statistical analysis of the acquired data, reproducing Table 4, Figure 12 and Figure 13 from the paper.
+The notebook [model_analysis.ipynb](src/model_analysis.ipynb) runs the statistical analysis of the acquired data to validate empirically all of the model assumptions. It reproduces Table 4, Figure 12 and Figure 13 from the paper.
 
 ### 🌡️🔌 Analysis under Corner Values
 
-The notebook [Corner_Values.ipynb](src/Corner_Values.ipynb) analyzes the data aquired under corner values of temperature and voltage.
+The notebook [corner_values.ipynb](src/corner_values.ipynb) analyzes the data aquired under corner values of temperature and voltage.
 
 ### ❄️ Temperature Attack
 
