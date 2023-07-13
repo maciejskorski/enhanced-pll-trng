@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Skórski"
+  given-names: "Maciej"
+- family-names: "Dallison"
+  given-names: "Quentin"
+- family-names: "Bochard"
+  given-names: "Nathalie"
+- family-names: "Bernard"
+  given-names: "Florent"
+- family-names: "Fisher"
+  given-names: "Viktor"
+title: "Enhancing Quality and Security of the PLL-TRNG: Code and Data"
+version: 1.0.0
+date-released: 2023-07-15
+url: "https://github.com/maciejskorski/enhanced-pll-trng"
