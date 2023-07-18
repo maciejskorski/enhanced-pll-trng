@@ -162,7 +162,9 @@ The notebook [corner_values.ipynb](src/corner_values.ipynb) analyzes the data aq
 
 ### ❄️ Temperature Attack
 
-TBD
+A temperature attack was executed during acquisition and the results are shown in the animation below. As the TRNG was online, we blew cold air (around -40°C) directly on the chip to influence the jitter and the performance of the TRNG. Plotted are consecutive values of the empirical variance of the counter estimated on 4096 counter values (left) and the reconstructed period of the sampled PLL (right).
+During the first 80 to 90 estimations of the counter variance, we see that it remains constant to 0.92-0.98. However, with a sudden drop in temperature, the samples seem to shift along the reconstructed period. We also observe a sharp increase in the estimated variance on the left panel to about 1.15.
+In addition to the lower bound for counter variance that we defined in the paper, the experiment suggests that an embedded test dedicated to detecting a sudden change in counter variance could address third-party attacks.
 
 ![Temperature Attack](images/pll_trng_temperature_attack.gif)
 
