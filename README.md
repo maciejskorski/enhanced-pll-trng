@@ -9,7 +9,7 @@
 
 # Enhancing Quality and Security of the PLL-TRNG
 
-## :star: Authors
+## ⭐ Authors
 
 <p align="center">
     <a href="https://skorski.lu"><strong>Maciej Skórski</strong></a>,
@@ -19,7 +19,7 @@
     <a href="mailto:fischer@univ-st-etienne.fr"><strong>Viktor Fisher</strong></a>
 </p>
 
-## :memo: About
+## 📝 About
 
 This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in :open_book: "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
 
@@ -28,7 +28,34 @@ This repository contains supplementary material (data and code) to reproduce the
 <figcaption style="text-align:center">Figure: PLL-TRNG Architecture</figcaption>
 </figure>
 
-## :file_folder: Data
+
+## 🖥 Code execution
+
+The code is available in form of Python and R notebooks under the `src` directory. 
+The notebooks run interactively under the customized [Docker Image of Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
+For convenience, [the image](Dockerfile) provides the user with both software and data.
+
+### Run Online with Docker
+
+<!-- markdown-link-check-disable -->
+For a single-click online access use  <a href="#binder_link">the Binder link at the top</a>.
+<!-- markdown-link-check-enable -->
+
+### Run Locally with Docker
+
+On a machine with Docker (local computer, virtual machine on cloud) run this image
+```console
+docker run -it --rm -p 8888:8888 ghcr.io/maciejskorski/enhanced-pll-trng:latest
+```
+and follow instructions to access the repository via Jupyter. 
+
+<details>
+  <summary>See a snapshot </summary>
+The Jupyter server will be available through a web browser, under http://127.0.0.1:8888/lab?token=...
+![Jupyter Start](images/jupyter_start.png)
+</details>
+
+## 📁 Data
 
 All necessary data can be found under the `data` directory.
 The zipped data are available to download from [releases](https://github.com/maciejskorski/enhanced-pll-trng/releases).
@@ -108,35 +135,7 @@ For each experiment, the data file contains the bitstream available at the sampl
 
 </details>
 
-## 🖥 Code execution
-
-The code is available in form of Python and R notebooks under the `src` directory. 
-The notebooks run interactively under the customized [Docker Image of Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
-For convenience, [the image](Dockerfile) provides the user with both software and data.
-
-### Run Online with Docker
-
-<!-- markdown-link-check-disable -->
-For a single-click online access use  <a href="#binder_link">the Binder link at the top</a>.
-<!-- markdown-link-check-enable -->
-
-### Run Locally with Docker
-
-On a machine with Docker (local computer, virtual machine on cloud) run this image
-```console
-docker run -it --rm -p 8888:8888 ghcr.io/maciejskorski/enhanced-pll-trng:latest
-```
-and follow instructions to access the repository via Jupyter. 
-
-<details>
-  <summary>See a snapshot </summary>
-The Jupyter server will be available through a web browser, under http://127.0.0.1:8888/lab?token=...
-![Jupyter Start](images/jupyter_start.png)
-</details>
-
-
-
-## :bar_chart: Scripts Overview
+## 📊 Scripts Overview
 
 The code can be found under the `src` directory, as Python scripts and Python or R notebooks.
 
