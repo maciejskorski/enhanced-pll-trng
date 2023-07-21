@@ -24,7 +24,7 @@
 This repository contains supplementary material (data and code) to reproduce the evaluation of a true random number generator presented in :open_book: "Enhancing Quality and Security of the PLL-TRNG" at TCHES 2023.
 
 <figure>
-<img src="images/pll_trng_new.jpg" style="display:block; margin:auto"/>
+<img src="images/pll_trng_new.jpg" style="display:block; margin:auto" width="100%"/>
 <figcaption style="text-align:center">Figure: PLL-TRNG Architecture</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ and follow instructions to access the repository via Jupyter.
   <summary>See a snapshot </summary>
 The Jupyter server will be available through a web browser, under http://127.0.0.1:8888/lab?token=...
 
-![Jupyter Start](images/jupyter_start.png)
+![Jupyter Start](images/jupyter_start.png){ width=100% }
 </details>
 
 ## 📁 Data
@@ -165,6 +165,7 @@ The notebook [corner_values.ipynb](src/corner_values.ipynb) analyzes the data aq
 A temperature attack was executed during acquisition and the results are shown in the animation below. As the TRNG was online, we blew cold air (around -40°C) directly on the chip to influence the jitter and the performance of the TRNG. Plotted are consecutive values of the empirical variance of the counter estimated on 4096 counter values (left) and the reconstructed period of the sampled PLL (right).
 During the first 80 to 90 estimations of the counter variance, we see that it remains constant to 0.92-0.98. However, with a sudden drop in temperature, the samples seem to shift along the reconstructed period. We also observe a sharp increase in the estimated variance on the left panel to about 1.15.
 In addition to the lower bound for counter variance that we defined in the paper, the experiment suggests that an embedded test dedicated to detecting a sudden change in counter variance could address third-party attacks.
+For more details, see the notebook [temperature_attack.ipynb](src/temperature_attack.ipynb).
 
 ![Temperature Attack](images/pll_trng_temperature_attack.gif)
 
