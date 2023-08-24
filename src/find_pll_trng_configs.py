@@ -13,6 +13,9 @@ __author__ = "Brice Colombier, Nathalie Bochard"
 #   a tool to help you find configurations
 #   according to defined constraints.
 
+# update Python lib when necessary
+# pip install python-contraint
+
 from functools import lru_cache
 from math import sqrt, floor, ceil, gcd
 from time import process_time
