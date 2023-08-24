@@ -14,7 +14,7 @@ __author__ = "Brice Colombier, Nathalie Bochard"
 #   according to defined constraints.
 
 # update Python lib when necessary
-# pip install python-contraint
+# pip install python-constraint
 
 from functools import lru_cache
 from math import sqrt, floor, ceil, gcd
