@@ -173,3 +173,10 @@ For more details, see the notebook [temperature_attack.ipynb](src/temperature_at
 
 - For random number generator standards, see [AIS-31 (New Draft)](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Certification/Interpretations/AIS_31_Functionality_classes_for_random_number_generators_e.pdf?__blob=publicationFile&v=5)
 - For more about stochastic models for PLL-based designs, see ["Modern Random Number Generator Design - Case Study on a Secured PLL-based TRNG"](https://www.degruyter.com/document/doi/10.1515/itit-2018-0025/html?lang=en)
+
+## Award
+
+This work received the "Best Artefact Award" at TCHES'23. 
+
+![tches_bestrepo](https://github.com/user-attachments/assets/0bf7e964-1b84-49b9-8c1c-4918276b8adc)
+
